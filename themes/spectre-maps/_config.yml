@@ -1,0 +1,8 @@
+title: Spectre Maps Theme
+favicon: favicon.ico
+color: "blue"
+
+# node_sass:
+#   outputStyle: nested
+#   precision: 4
+#   sourceComments: false

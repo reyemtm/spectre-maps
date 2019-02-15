@@ -1,0 +1,465 @@
+<!--header class="navbar">
+  <section class="navbar-section">
+    <a href="#" class="btn btn-link">COZ | <% if (page.title) {%><%- page.title %><%}%></a>
+  </section>
+  <section class="navbar-center">
+    <a href="http://www.coz.org" class="coz-logo tooltip tooltip-bottom" data-tooltip="City of Zanesville Website">
+      <img src="http://127.0.0.1:4000/assets/img/coz_logo_gray_web.jpg" alt="City of Zanesville Logo">
+    </a>
+  </section>
+  <section class="navbar-section">
+    <a href="http://www.coz.org" class="btn btn-link">COZ Homepage</a>
+    <a href="http://www.coz.org/contact/" class="btn btn-link">Contact</a>
+  </section>
+</header-->
+
+<!-- make all ids either camelCase or dashes and all the same either modal first, or name then modal-->
+
+<div id="loading" class="loading loading-lg centered"></div>
+<div id="loading-blank" class="loading-lg loading-blank centered"></div>
+
+<div class="off-canvas">
+  <!-- off-screen toggle button -->
+  <!--a class="off-canvas-toggle btn btn-primary btn-action" href="#sidebarId">
+    <i class="fa fa-bars fa-2x"></i>
+  </a-->
+
+  <div id="sidebarId" class="off-canvas-sidebar">
+    <a id="coz-sidebar--header-close" href="#close">
+      <i class="icon icon-cross text-gray"></i>
+    </a>
+    <div id="coz-sidebar--header" class="bg-gray">
+      <h4>COZ | <% if (page.title) {%><%- page.title %><%}%></h4>
+      <div class="accordion">
+        <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden>
+        <label class="accordion-header" for="accordion-1" class="text-gray">
+          <i class="fas fa-link" style="color:#acb3c2;"></i>
+          <span class="text-gray">City of Zanesville Links</span>
+        </label>
+        <div class="accordion-body container">
+          <% if (page.link) { %><a href="<%- page.link %>"> <span class="text-primary"><%- page.linkTitle %></a></span><br><% } %>
+          <a href="http://www.coz.org/"><span>City of Zanesville Homepage</span></a><br>
+          <a href="http://www.coz.org/maps/"><span>City of Zanesville City Maps</span></a><br>
+          <a href="/about"><span>About the City of Zanesville Map Portal</span></a>
+          <!--hr>
+          <a href="/" class="text-gray"><span>City of Zanesville Map Portal</span></a-->
+        </div>
+      </div>
+    </div>
+    <div id="coz-sidebar--content" class="coz-sidebar--content">
+      <div id="coz-sidebar--layerControl"></div>
+      <div id="coz-sidebar--button" class="bg-gray text-center"></div>
+      <div id="coz-sidebar--legend"></div>
+      <div id="coz-sidebar--info" class="container">
+        <i id="coz-sidebar--info-close" class="icon icon-cross"></i>
+        <div id="coz-sidebar--info-title"></div>
+        <div id="coz-sidebar--info-body"></div>
+      </div>
+    </div>
+
+    <div id="coz-sidebar--footer" class="bg-gray">
+      <button id="print-preview-button" class="btn btn-outline modal-open coz-sidebar--print-button"><i class="icon icon-photo"></i> Print</button>
+      <a href="#modal-contact" id="3" class="btn btn-outline modal-open"><i class="icon icon-message"></i> Contact</a>
+      <a href="#modal-about" id="0" class="btn btn-outline modal-open"><i class="fa fa-info-circle fa-lg"></i> About</a>
+      <a href="#modal-help" class="btn btn-outline modal-open"><i class="fa fa-question-circle fa-lg"></i> Help</a>
+    </div>
+  </div>
+
+  <a class="off-canvas-overlay" href="#close"></a>
+</div>
+<!-- map -->
+<div id="map" class="coz-map"></div>
+<!-- modals -->
+<div id="modals">
+
+  <div class="modal" id="coz-map-disclaimer">
+    <a href="#close" class="modal-overlay" aria-label="Close" style="display:none;"></a>
+    <div class="modal-container" style="position:relative;">
+      <div class="modal-header" style="padding-bottom:0;margin:24px 0 24px;">
+        <img class="coz-logo-modal" src="<%- config.logo %>"/>
+        <a href="#close" class="btn btn-clear float-right modal-close" aria-label="Close" style="display:none;"></a>
+        <div class="modal-title h4">
+          <h4 class="text-primary">Map Disclaimer</h4>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+          <div id="iewarning" style="display: none;">
+            <div class="divider text-center" data-content="Browser Compatibility"></div>
+            <div class="bg-error">
+              <p>It appears you are using Internet Explorer. Although this map will run in IE 11, it may have limited functionality. Please consider switching to a modern browser such as Chrome, Edge or Firefox.</p>
+            </div>
+          </div>
+          <div class="accordion">
+            <input type="checkbox" id="coz-map-disclaimer--text" name="accordion-checkbox" hidden checked>
+            <label class="accordion-header" for="coz-map-disclaimer--text">
+              <span class="divider text-center" data-content="Please Read and Accept the Terms Below"></span>
+            </label>
+            <div class="accordion-body">
+                <div class="disclaimer" style=font-size:smaller>
+                <p>
+                    The information provided by the City of Zanesville is provided ‘as is’ and for reference only. Any information published on this server could contain technical inaccuracies or typographical errors. These maps do not represent a professional survey. The mapping data has been abstracted to only contain the information required for local government purposes. The maps are compiled from official records (including plats, surveys and recorded deeds), but they may contain compilation errors not on the original documents. YOU SHOULD ALWAYS USE THE ORIGINAL RECORDED DOCUMENTS TO ANSWER LEGAL AND SURVEY QUESTIONS. No liability (either expressed or implied) for the accuracy of the data delineated herein is assumed the City of Zanesville or its employees. The data on this website is provided for demonstration purposes only. Accuracy and precision are tied to our original published map scale and does not change if the user zooms in and out.  Zooming in and out can however mislead the user into believing -- falsely -- that the accuracy and precision have improved.  
+                </p>
+                <p>
+                    The City of Zanesville makes every effort to produce and publish the most current and accurate information possible, but no warranties, expressed or implied, are provided for the data provided, its use, or its interpretation. The City of Zanesville does not guarantee the accuracy of the material contained herein and is not responsible for any use, misuse, or misrepresentation of this information or its derivatives. In no event shall the City of Zanesville become liable to users of this data, or any other party, for any loss or damages, consequential or otherwise, including but not limited to time, money, or goodwill, arising from the use, misuse, operation or modification of the data. In using the data, users further agree to indemnify, defend, and hold harmless the City of Zanesville for any and all liability of any nature arising out of or resulting from the lack of accuracy, currency or completeness, or correctness of the data, the use or misuse of the data. In addition, the information on this server, or site, is subject to change without notice and does not represent a commitment on the part of the City of Zanesville in the future.
+                </p>
+                <p>   
+                    By viewing, printing, or otherwise using the services provided on this website, I am agreeing that I have read, understand and fully agree with this Disclaimer and Terms of Service.
+                </p>
+              </div>
+              <div id="coz-mao-disclaimer--accept">
+                <a href="#close" id="accept" class="modal-close"><button class="btn btn-success">Accept</button></a>
+                <a href="http://www.coz.org"><button class="btn btn-error btn-outline">Decline</button></a>
+              </div>
+              <br><br>
+              <span class="divider text-center"></span>            
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="text-align:left;display:none;">
+        <a href="#close" aria-label="Close" class="modal-close"><button class="btn btn-primary">Close</button></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-help">
+    <a href="#close" class="modal-overlay" aria-label="Close"></a>
+    <div class="modal-container" style="position:relative;">
+      <div class="modal-header" style="padding-bottom:0;margin:24px 0 24px;">
+        <img class="coz-logo-modal" src="/assets/img/COZ_Logo_2017_web.jpg"/>
+        <a href="#close" class="btn btn-clear float-right modal-close" aria-label="Close" style="display:none;"></a>
+        <div class="modal-title h4">
+          <h class="text-primary">How to Use this Map</h4>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+          <div>
+            <h4>Map Layers</h4>
+            <p>The sidebar contains various map layers that can be turned on and off. On a desktop computer the drawing order of these layers and layer groups can also be adjusted by dragging the layer or layer group name.</p>
+            <h4>Printing</h4>
+            <p>
+              To print a map, click the print button on the bottom of the left sidebar. If the preview is not centered correctly or has other errors, close the preview window and try printing again. If this does not work try taking a screenshot. <strong>Printing is disabled on the Historic Maps application.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="text-align:left;">
+        <a href="#close" aria-label="Close" class="modal-close"><button class="btn btn-primary">Close</button></a>
+        <a href="#coz-map-disclaimer" aria-label="Disclaimer" style="float:right;"><button class="btn btn-outline">Map Disclaimer</button></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- print modal-->
+  <div id="modal-print" class="modal">
+    <a href="#close" class="modal-overlay" aria-label="Close"></a>
+    <div class="modal-container">
+      <div class="modal-header">
+        <a href="#" class="btn btn-clear float-right modal-close" aria-label="Close"></a>
+        <div class="modal-title h5">Print Preview</div>
+      </div>
+      <div class="modal-body">
+        <div id="map-print-modal--preview"></div>
+        <div class="content">
+          <div id="export-loader" class="loading-lg centered"></div>
+          <form name="print" id="print-form">
+            <div class="form-group">
+              <label class="form-label" for="formTitle">Map Title</label>
+              <input class="form-input" type="text" id="export-title" name="export-title" placeholder="" maxlength="90">
+            </div>
+            <!-- format -->
+            <!--div class="form-group">
+              <label class="form-label">Output Format</label>
+              <label class="form-radio" for="output-format-0">
+                <input type="radio" name="output-format" id="output-format-0" value="pdf" checked="checked">
+                <i class="form-icon"></i> PDF
+              </label>
+              <label class="form-radio" for="output-format-1">
+                <input type="radio" name="output-format" id="output-format-1" value="png">
+                <i class="form-icon"></i> PNG
+              </label>
+            </div-->
+            <!-- dimensions -->
+            <!--div class="form-group">
+              <label class="form-label">Dimensions</label>
+              <label class="form-radio size" for="dimensions-0">
+                <input type="radio" name="dimensions" id="dimensions-0" value="default" checked="checked">
+                <i class="form-icon"></i> 8.5 x 11
+              </label-->
+              <!--label class="form-radio size" for="dimensions-1">
+                <input type="radio" name="dimensions" id="dimensions-1" value="large">
+                <i class="form-icon"></i> 11 x 17 (Prints with Legend)
+              </label-->
+            <!--/div-->
+            <div class="form-group">
+              <select class="form-select select-sm" id="map-print--modal-scale">
+                <option value="1">Map Scale (Beta)</option>
+                <option value="20">1" ~ 20'</option>
+                <option value="50">1" ~ 50'</option>
+                <option value="100">1" ~ 100'</option>
+                <option value="200">1" ~ 200'</option>
+              </select>
+            </div>
+            <button type="button" id="export-map" class="btn btn-primary">Export Map</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modal-about">
+    <a href="#close" class="modal-overlay" aria-label="Close"></a>
+    <div class="modal-container">
+      <div class="modal-header">
+        <a href="#close" class="btn btn-clear float-right modal-close" aria-label="Close"></a>
+        <div class="modal-title h4">
+          <p>About the <%- page.title %> Interactive Map</p>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+          <p><%- page.about %></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#close" aria-label="Close" class="modal-close" style="float:left;"><button class="btn btn-primary">Close</button></a>
+        <a href="#modal-help" aria-label="Help" style="float:right;"><button class="btn btn-outline">How to use this Map</button></a>
+      </div>
+    </div>
+  </div>
+  <!--div id="map-share-modal" class="modal">
+    <a href="#close" class="modal-overlay" aria-label="Close"></a>
+    <div class="modal-container">
+      <div class="modal-header">
+        <a href="#close" class="btn btn-clear float-right modal-close" aria-label="Close"></a>
+        <div class="modal-title h5">Share the Map at the Current Location</div>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+          <form name="share">
+              <div class="form-group">
+                <label class="form-label" for="sharename">Recipient Name</label>
+                <input class="form-input" type="text" id="sharename" name="name" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="shareemail">Recipient Email</label>
+                <input class="form-input" type="text" id="shareemail" name="email" placeholder="email@domain.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="sharemessage">Message</label>
+                <textarea class="form-input" id="sharemessage" placeholder="Your message" rows="3" name="message"></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="shareurl">Current Map Location</label>
+                <textarea class="form-input" id="shareurl" placeholder="Your message" rows="1" name="url" disabled></textarea>
+              </div>
+              <div class="form-group">
+              </div>
+              <a id="sharemapBtn" href="mailto:?subject=COZ Map&body=Hi"><button class="btn bt-primary">Share</button></a>
+            </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div-->
+  <!--div id="map-report-modal" class="modal">
+    <a href="#close" class="modal-overlay" aria-label="Close"></a>
+    <div class="modal-container">
+      <div class="modal-header">
+        <a href="#" class="btn btn-clear float-right modal-close" aria-label="Close"></a>
+        <div class="modal-title h5">City of Zanesville Contact Form</div>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+          <form name="contact" method="POST" netlify>
+            <div class="form-group">
+              <label class="form-label" for="formName">Name</label>
+              <input class="form-input" type="text" id="formName" name="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="formEmail">Email</label>
+              <input class="form-input" type="text" id="formEmail" name="email" placeholder="email@domain.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="formMessage">Your Message</label>
+              <textarea class="form-input" id="formMessage" placeholder="Your message" rows="3" name="message"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-switch">
+                <input type="checkbox">
+                <i class="form-icon" name="updates"></i> Send updates to this application
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div-->
+  <div class="modal" id="zoning-modal">
+    <a href="#close" class="modal-overlay" aria-label="Close"></a>
+    <div class="modal-container">
+      <div class="modal-header">
+        <a href="#" class="btn btn-clear float-right modal-close" aria-label="Close"></a>
+        <div class="modal-title h5">Find Your Zoning Code</div>
+        <p>
+          Enter a Zanesville address and your zoning code will be shown below and on the map.
+        </p>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+          <div class="text-center">
+            <h2 id="zoningResult" class="text-center"></h2>
+          </div>
+          <div id="addressInput">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bg-gray" style="text-align:left;">
+        <em>All final zoning decisions are made by the Department of Public Service.</em>
+      </div>
+    </div>
+  </div>
+  <div id="modal-popup" class="modal popup">
+    <a id="modal-popup--close" href="#close" class="modal-overlay" aria-label="Close"></a>
+    <div class="modal-container">
+      <div class="modal-header">
+        <a id="modal-popup--close-btn" href="#" class="btn btn-clear float-right modal-close" aria-label="Close"></a>
+        <div id="modal-popup-title" class="modal-title h5">Feature Properties</div>
+      </div>
+      <div class="modal-body">
+        <div id="modal-popup-loader" class="loading-lg centered"></div>
+        <div id="modal-popup-body" class="content">
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="finder-modal">
+    <a href="#close" class="modal-overlay" aria-label="Close"></a>
+    <div class="modal-container">
+      <div class="modal-header">
+        <a href="#" class="btn btn-clear float-right modal-close" aria-label="Close"></a>
+        <div id="finderTitle" class="modal-title h5">Finder</div>
+        <p>
+        
+        </p>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+          <div class="text-center">
+            <h2 id="finderResult" class="text-center"></h2>
+          </div>
+          <div id="finderInput">
+          </div>
+          <div id="finderResultList">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bg-gray" style="text-align:left;">
+        <em></em>
+      </div>
+    </div>
+  </div>
+</div>
+<!--all scripts bundled by parcel-bundler-->
+<script src="/assets/js/vendor/mapbox-gl-custom.js"></script>
+<script src="/assets/js/vendor/mapbox-gl-geocoder.min.js"></script>
+<script src="/assets/js/dist/coz-scripts.min.js"></script>
+<script>
+  if (!mapboxgl.supported()) {
+    alert('Your browser does not support the functionality in this web map. You will now be redirected to the City of Zanesville homepage.');
+    setTimeout(function () {
+      window.href = "http://www.coz.org/"
+    }, 1000)
+  }
+  
+  var mapDisclaimerModal = document.getElementById("coz-map-disclaimer");
+  var mapDisclaimerModalFooter = mapDisclaimerModal.getElementsByClassName('modal-footer');
+  var mapDisclaimerAccordian = document.getElementById('coz-map-disclaimer--text');
+  var mapDisclaimerModalClose = document.getElementById('accept');
+
+  mapDisclaimerModalClose.onclick = function() {
+    if (typeof window.CustomEvent === "function") {
+      console.log('accepted disclaimer')
+      sessionStorage.setItem('cozaccept', 1);
+      // mapDisclaimerModalFooter[0].style.display = "block";
+      mapDisclaimerAccordian.checked = true;
+      mapDisclaimerModal.classList.remove('active');
+      var mapDisclaimerModalLoading = document.getElementById('loading');
+      if (loading.classList.contains('loading')) { loading.classList.remove('loading') }
+    }
+  }
+
+  /*
+  show IE Warning and load IE polyfills
+  */
+  if (!(window.Promise&&[].includes&&Object.assign&&window.Map)) {
+    var ie = document.getElementById('iewarning');
+    ie.style.display = "block";
+    localStorage.setItem("ie", true);
+    document.write('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js"><\/script>')
+  }
+
+  /* show disclaimer */
+
+  if (sessionStorage.getItem('cozaccept') === "1") {
+    console.log('already accepted disclaimer');
+    // mapDisclaimerModalFooter[0].style.display = "block";
+    mapDisclaimerAccordian.checked = true;
+  }else{
+    mapDisclaimerModal.classList.add('active');
+  }
+
+  /*
+  sidebar click _partial to all maps - close sidebar
+  */
+
+    var sidebar = document.getElementById('sidebarId');
+    var cozMapClass = document.getElementsByClassName('coz-map');
+    var sidebarHeaderClose = document.getElementById('coz-sidebar--header-close');
+    var sidebarOverlay = document.querySelector(".off-canvas-overlay");
+
+    if (window.innerWidth >= 769) {
+      sidebar.classList.add('active');
+      for (var m = 0; m < cozMapClass.length; m++) {
+        cozMapClass[m].classList.add('coz-map--sidebar-active')
+      }
+    }
+
+    sidebarOverlay.addEventListener('click', function() {
+      sidebar.classList.remove('active');
+      for (var m = 0; m < cozMapClass.length; m++) {
+        cozMapClass[m].classList.remove('coz-map--sidebar-active')
+      } 
+    });
+    
+    sidebarHeaderClose.onclick = function() {
+      if (this.parentElement.classList.contains('active')) {
+        this.parentElement.classList.remove('active');
+        for (var m = 0; m < cozMapClass.length; m++) {
+          cozMapClass[m].classList.remove('coz-map--sidebar-active')
+        } 
+      }
+    }
+
+    window.onresize = function() {
+      if (window.innerWidth > 768 && sidebar.classList.contains('active')) {
+        console.log('active')
+        for (var m = 0; m < cozMapClass.length; m++) {
+          cozMapClass[m].classList.add('coz-map--sidebar-active')
+        }    
+      }
+    }
+
+</script>
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha256-AAhU14J4Gv8bFupUUcHaPQfvrdNauRHMt+S4UVcaJb0=" crossorigin="anonymous"></script-->
+<!-- app 'post' script -->
+<%- page.content %>

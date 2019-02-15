@@ -1,0 +1,101 @@
+/**/
+
+/*spectre and html*/
+
+/**/
+
+html,
+body {
+  background: white;
+  color: $theme-color-body;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+  margin: 2rem auto;
+  max-width: 40rem;
+}
+.post > p > img {
+  margin: 1rem -2rem;
+  max-width: 120%;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+.logo {
+  width: 1rem;
+  padding-top: 0.4rem;
+}
+
+.navbar {
+  background-color: #f8f9fa;
+  padding: 0 0.6rem;
+  color: #0d84b3;
+  z-index: 1;
+  width:100%;
+}
+
+// .category-page .modal {
+//   align-items: baseline; 
+//   top: 2rem;
+// }
+
+@media screen and (max-width:768px) {
+  .navbar .navbar-section:not(:first-child):last-child {
+    position: absolute;
+    left: 12px;
+    top: 30px;
+    font-size: 0.6rem;
+  }
+  .navbar .navbar-section {
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 1281px) {
+  .col-xl-3 {
+    width: 25%;
+    flex: none;
+  }
+}
+@media (min-width: 481px) and (max-width: 700px) {
+  .col-sm-6 {
+      width: 50%;
+  }
+}
+.container {
+  padding: 0 0.6rem;
+  padding-left: 0.6rem;
+  padding-right: .6rem;
+}
+/* #content {
+  padding-top:4rem;
+} */
+
+.card {
+  margin: 0.25rem 0.25rem 1rem;
+  /* border: none; */
+  transition: all .2s ease-in-out;
+  /* box-shadow: 0 0 20px 4px rgba(31,51,73,.1); */
+}
+.card .card-image {
+  overflow: hidden;
+}
+.card-header {
+  min-height: 95px;
+}
+.card .btn {
+  width: 4rem;
+}
+.card:hover{
+  background-color: #f8f9fa;
+  /* transform: scale(1.02); */
+  box-shadow: 0 0 20px 3px rgba(31,51,73,.25);
+}
+footer {
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
