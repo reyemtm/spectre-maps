@@ -22,7 +22,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://localhost:4000
 root: /
-permalink: :title/
+permalink: :category/:title/
 permalink_defaults:
 
 # Directory
@@ -30,10 +30,11 @@ source_dir: source
 public_dir: public
 tag_dir: tags
 archive_dir: archives
-category_dir: categories
+category_dir: .
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: 
+exclude: "themes/spectre-maps/source/spectre.css/**/*"
 
 # Writing
 new_post_name: :title.md # File name of new posts

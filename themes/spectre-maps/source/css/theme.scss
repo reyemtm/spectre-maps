@@ -1,13 +1,11 @@
-/**/
+/* variables */
 
-/*spectre and html*/
-
-/**/
+$theme-color: #24292e !default;
 
 html,
 body {
   background: white;
-  color: $theme-color-body;
+  color: $theme-color;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

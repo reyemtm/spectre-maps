@@ -118,13 +118,16 @@ $zindex-2: 200 !default;
 $zindex-3: 300 !default;
 $zindex-4: 400 !default;
 
-//Spectre
-@import '../spectre.css/src/spectre.scss';
-@import '../spectre.css/src/spectre-icons.scss';
-@import '../spectre.css/src/spectre-exp.scss';
 
 //Theme variables
+$theme-color: #24292e !default;
 
-$theme-color-body: #24292e !default;
 
+//Spectre
+
+@import '../../../../node_modules/spectre.css/src/spectre-exp.scss';
+@import '../../../../node_modules/spectre.css/src/spectre-icons.scss';
+@import '../../../../node_modules/spectre.css/src/spectre-exp.scss';
+
+//Base Theme
 @import 'theme.scss'

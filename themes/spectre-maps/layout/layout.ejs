@@ -40,7 +40,11 @@
   <!-- fonts and stylesheets -->
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <% if (page.layout == 'map') { %><link rel='stylesheet' href='/css/map-style.css' /><%}%>
+  <% if (page.layout == 'map') { %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/0.53.0/mapbox-gl.css" integrity="sha256-98ZrstcQ9rIls5Ww035RRlxNlGm+oA27bvwgXd7+PHg=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/0.53.0/mapbox-gl.js" integrity="sha256-298HJ6TDqZwo1RlTMnBhJs227ky7vdboUFCIN0/D9NU=" crossorigin="anonymous"></script>
+  <link rel='stylesheet' href='/css/map-style.css' />
+  <%}%>
   <style>
     <% if (page.css) {%>
     <%- page.css %>
