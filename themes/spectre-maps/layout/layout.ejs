@@ -19,11 +19,11 @@
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="<%- config.twitter %>">
-  <meta name="twitter:creator" content="<%- config.twitter %>">
+  <meta name="twitter:site" content="<%- config.twitterSite %>">
+  <meta name="twitter:creator" content="<%- config.twitterCreator %>">
   <meta name="twitter:title" content="<%- page.title %>">
   <meta name="twitter:description" content="<% if (page.about) { %><%- strip_html(page.about) %><% } %>">
-  <meta name="twitter:domain" content="coz.org" />
+  <meta name="twitter:domain" content="<%- config.twitterDomain %>" />
 
   <!-- Open Graph data -->
   <meta property="og:title" content="<%- page.title %>" />
@@ -85,7 +85,7 @@
 </div>
 <% if (page.layout != 'map') { %>
 <footer class="footer bg-gray">
-  <div class="container text-gray">
+  <div class="mapui__container container text-gray">
     <p>This site is designed and maintained by <a href="<%- config.owner-url %>" target="_blank"><%- config.owner %></a></p>
     <p>Content &copy;2018 <%- config.copyright %></p>
   </div>

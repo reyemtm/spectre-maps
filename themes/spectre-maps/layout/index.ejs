@@ -1,7 +1,7 @@
 
 <%- partial('_partial/header', {category: ""}) %>
 <main>
-  <div class="container" style="max-width:1200px!important;">
+  <div class="container">
       <% site.categories.sort('name', -1).map(function(category){  %>
         <!-- <%- category.name %>-->
         <% if (category.name != "redirect" && category.name != "data") { %>

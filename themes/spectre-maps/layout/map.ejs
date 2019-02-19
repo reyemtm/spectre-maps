@@ -10,10 +10,10 @@
   </a-->
 
   <div id="sidebarId" class="off-canvas-sidebar">
-    <a id="coz-sidebar--header-close" href="#close">
+    <a id="spectremaps-sidebar--header-close" href="#close">
       <i class="icon icon-cross text-gray"></i>
     </a>
-    <div id="coz-sidebar--header" class="bg-gray">
+    <div id="spectremaps-sidebar--header" class="bg-gray">
       <h4>COZ | <% if (page.title) {%><%- page.title %><%}%></h4>
       <div class="accordion">
         <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden>
@@ -21,7 +21,7 @@
           <i class="fas fa-link" style="color:#acb3c2;"></i>
           <span class="text-gray">City of Zanesville Links</span>
         </label>
-        <div class="accordion-body container">
+        <div class="accordion-body mapui__container container">
           <% if (page.link) { %><a href="<%- page.link %>"> <span class="text-primary"><%- page.linkTitle %></a></span><br><% } %>
           <a href="http://www.coz.org/"><span>City of Zanesville Homepage</span></a><br>
           <a href="http://www.coz.org/maps/"><span>City of Zanesville City Maps</span></a><br>
@@ -31,19 +31,19 @@
         </div>
       </div>
     </div>
-    <div id="coz-sidebar--content" class="coz-sidebar--content">
-      <div id="coz-sidebar--layerControl"></div>
-      <div id="coz-sidebar--button" class="bg-gray text-center"></div>
-      <div id="coz-sidebar--legend"></div>
-      <div id="coz-sidebar--info" class="container">
-        <i id="coz-sidebar--info-close" class="icon icon-cross"></i>
-        <div id="coz-sidebar--info-title"></div>
-        <div id="coz-sidebar--info-body"></div>
+    <div id="spectremaps-sidebar--content" class="spectremaps-sidebar--content">
+      <div id="spectremaps-sidebar--layerControl"></div>
+      <div id="spectremaps-sidebar--button" class="bg-gray text-center"></div>
+      <div id="spectremaps-sidebar--legend"></div>
+      <div id="spectremaps-sidebar--info" class="container">
+        <i id="spectremaps-sidebar--info-close" class="icon icon-cross"></i>
+        <div id="spectremaps-sidebar--info-title"></div>
+        <div id="spectremaps-sidebar--info-body"></div>
       </div>
     </div>
 
-    <div id="coz-sidebar--footer" class="bg-gray">
-      <button id="print-preview-button" class="btn btn-outline modal-open coz-sidebar--print-button"><i class="icon icon-photo"></i> Print</button>
+    <div id="spectremaps-sidebar--footer" class="bg-gray">
+      <button id="print-preview-button" class="btn btn-outline modal-open spectremaps-sidebar--print-button"><i class="icon icon-photo"></i> Print</button>
       <a href="#modal-contact" id="3" class="btn btn-outline modal-open"><i class="icon icon-message"></i> Contact</a>
       <a href="#modal-about" id="0" class="btn btn-outline modal-open"><i class="fa fa-info-circle fa-lg"></i> About</a>
       <a href="#modal-help" class="btn btn-outline modal-open"><i class="fa fa-question-circle fa-lg"></i> Help</a>
@@ -53,15 +53,15 @@
   <a class="off-canvas-overlay" href="#close"></a>
 </div>
 <!-- map -->
-<div id="map" class="coz-map"></div>
+<div id="map" class="spectremaps-map"></div>
 <!-- modals -->
 <div id="modals">
 
-  <div class="modal" id="coz-map-disclaimer">
+  <div class="modal" id="spectremaps-map-disclaimer">
     <a href="#close" class="modal-overlay" aria-label="Close" style="display:none;"></a>
     <div class="modal-container" style="position:relative;">
       <div class="modal-header" style="padding-bottom:0;margin:24px 0 24px;">
-        <img class="coz-logo-modal" src="<%- config.logo %>"/>
+        <img class="spectremaps-logo-modal" src="<%- config.logo %>"/>
         <a href="#close" class="btn btn-clear float-right modal-close" aria-label="Close" style="display:none;"></a>
         <div class="modal-title h4">
           <h4 class="text-primary">Map Disclaimer</h4>
@@ -76,8 +76,8 @@
             </div>
           </div>
           <div class="accordion">
-            <input type="checkbox" id="coz-map-disclaimer--text" name="accordion-checkbox" hidden checked>
-            <label class="accordion-header" for="coz-map-disclaimer--text">
+            <input type="checkbox" id="spectremaps-map-disclaimer--text" name="accordion-checkbox" hidden checked>
+            <label class="accordion-header" for="spectremaps-map-disclaimer--text">
               <span class="divider text-center" data-content="Please Read and Accept the Terms Below"></span>
             </label>
             <div class="accordion-body">
@@ -92,7 +92,7 @@
                     By viewing, printing, or otherwise using the services provided on this website, I am agreeing that I have read, understand and fully agree with this Disclaimer and Terms of Service.
                 </p>
               </div>
-              <div id="coz-mao-disclaimer--accept">
+              <div id="spectremaps-mao-disclaimer--accept">
                 <a href="#close" id="accept" class="modal-close"><button class="btn btn-success">Accept</button></a>
                 <a href="http://www.coz.org"><button class="btn btn-error btn-outline">Decline</button></a>
               </div>
@@ -112,7 +112,7 @@
     <a href="#close" class="modal-overlay" aria-label="Close"></a>
     <div class="modal-container" style="position:relative;">
       <div class="modal-header" style="padding-bottom:0;margin:24px 0 24px;">
-        <img class="coz-logo-modal" src="/assets/img/COZ_Logo_2017_web.jpg"/>
+        <img class="spectremaps-logo-modal" src="<%- config.logo %>"/>
         <a href="#close" class="btn btn-clear float-right modal-close" aria-label="Close" style="display:none;"></a>
         <div class="modal-title h4">
           <h class="text-primary">How to Use this Map</h4>
@@ -132,7 +132,7 @@
       </div>
       <div class="modal-footer" style="text-align:left;">
         <a href="#close" aria-label="Close" class="modal-close"><button class="btn btn-primary">Close</button></a>
-        <a href="#coz-map-disclaimer" aria-label="Disclaimer" style="float:right;"><button class="btn btn-outline">Map Disclaimer</button></a>
+        <a href="#spectremaps-map-disclaimer" aria-label="Disclaimer" style="float:right;"><button class="btn btn-outline">Map Disclaimer</button></a>
       </div>
     </div>
   </div>
@@ -357,7 +357,7 @@
 <!--all scripts bundled by parcel-bundler-->
 <script src="/assets/js/vendor/mapbox-gl-custom.js"></script>
 <script src="/assets/js/vendor/mapbox-gl-geocoder.min.js"></script>
-<script src="/assets/js/dist/coz-scripts.min.js"></script>
+<script src="/assets/js/dist/spectremaps-scripts.min.js"></script>
 <script>
   if (!mapboxgl.supported()) {
     alert('Your browser does not support the functionality in this web map. You will now be redirected to the City of Zanesville homepage.');
@@ -366,9 +366,9 @@
     }, 1000)
   }
   
-  var mapDisclaimerModal = document.getElementById("coz-map-disclaimer");
+  var mapDisclaimerModal = document.getElementById("spectremaps-map-disclaimer");
   var mapDisclaimerModalFooter = mapDisclaimerModal.getElementsByClassName('modal-footer');
-  var mapDisclaimerAccordian = document.getElementById('coz-map-disclaimer--text');
+  var mapDisclaimerAccordian = document.getElementById('spectremaps-map-disclaimer--text');
   var mapDisclaimerModalClose = document.getElementById('accept');
 
   mapDisclaimerModalClose.onclick = function() {
@@ -408,21 +408,21 @@
   */
 
     var sidebar = document.getElementById('sidebarId');
-    var cozMapClass = document.getElementsByClassName('coz-map');
-    var sidebarHeaderClose = document.getElementById('coz-sidebar--header-close');
+    var cozMapClass = document.getElementsByClassName('spectremaps-map');
+    var sidebarHeaderClose = document.getElementById('spectremaps-sidebar--header-close');
     var sidebarOverlay = document.querySelector(".off-canvas-overlay");
 
     if (window.innerWidth >= 769) {
       sidebar.classList.add('active');
       for (var m = 0; m < cozMapClass.length; m++) {
-        cozMapClass[m].classList.add('coz-map--sidebar-active')
+        cozMapClass[m].classList.add('spectremaps-map--sidebar-active')
       }
     }
 
     sidebarOverlay.addEventListener('click', function() {
       sidebar.classList.remove('active');
       for (var m = 0; m < cozMapClass.length; m++) {
-        cozMapClass[m].classList.remove('coz-map--sidebar-active')
+        cozMapClass[m].classList.remove('spectremaps-map--sidebar-active')
       } 
     });
     
@@ -430,7 +430,7 @@
       if (this.parentElement.classList.contains('active')) {
         this.parentElement.classList.remove('active');
         for (var m = 0; m < cozMapClass.length; m++) {
-          cozMapClass[m].classList.remove('coz-map--sidebar-active')
+          cozMapClass[m].classList.remove('spectremaps-map--sidebar-active')
         } 
       }
     }
@@ -439,7 +439,7 @@
       if (window.innerWidth > 768 && sidebar.classList.contains('active')) {
         console.log('active')
         for (var m = 0; m < cozMapClass.length; m++) {
-          cozMapClass[m].classList.add('coz-map--sidebar-active')
+          cozMapClass[m].classList.add('spectremaps-map--sidebar-active')
         }    
       }
     }

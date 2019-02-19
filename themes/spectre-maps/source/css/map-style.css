@@ -101,7 +101,7 @@
 }
 /* end layer tree */
 
-.coz-hidden {
+.spectremaps-hidden {
   display: none;
 }
 
@@ -155,12 +155,12 @@ hr {
 .btn {
   border-radius: 2px;
 }
-.coz-logo {
+.spectremaps-logo {
   position: absolute;
   left: 0.5rem;
   top: 0.5rem;
 }
-.coz-logo img:hover{
+.spectremaps-logo img:hover{
   border: solid thin #dfe0e1;
 }
 
@@ -176,19 +176,19 @@ css for navbar
   z-index: 1;
   width:100%;
 }
-.navbar .coz-logo {
+.navbar .spectremaps-logo {
   position: relative;
   top: 0;
   left:0;
 }
-.navbar .coz-logo img {
+.navbar .spectremaps-logo img {
   width:60px;
 }
-.navbar .coz-logo img:hover{
+.navbar .spectremaps-logo img:hover{
   border: solid thin #dfe0e1;
 }
 @media screen and (max-width:350px) {
-  .navbar .coz-logo {
+  .navbar .spectremaps-logo {
     display: none;
   }
 }
@@ -251,7 +251,7 @@ MAP PAGE ONLY
   background-color:#dfe0e1;
   cursor: pointer;
 }
-.coz-logo-modal {
+.spectremaps-logo-modal {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -264,7 +264,7 @@ MAP PAGE ONLY
   margin-top: 1rem;
 }
 /* .accordion {
-  background: url(/assets/img/coz_logo_#dfe0e1.png);
+  background: url(/assets/img/spectremaps_logo_#dfe0e1.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -324,7 +324,7 @@ MAP PAGE ONLY
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
 }
 /*SIDEBAR*/
-#coz-sidebar--header-close {
+#spectremaps-sidebar--header-close {
   position: absolute;
   right: 6px;
   z-index: 1000;
@@ -385,7 +385,7 @@ MAP PAGE ONLY
 .accordion-header:hover {
   cursor: pointer;
 }
-#coz-sidebar--header {
+#spectremaps-sidebar--header {
   position: relative;
   /* width: 360px; */
   padding-top: 0.4rem;
@@ -394,11 +394,11 @@ MAP PAGE ONLY
   z-index: 10;
   border-bottom: solid thin #dfe0e1;
 }
-#coz-sidebar--header h4 {
+#spectremaps-sidebar--header h4 {
   padding-left: 0.4rem;
   margin-bottom: 0.2rem;
 }
-.coz-sidebar--content {
+.spectremaps-sidebar--content {
   position: relative;
   top:0;
   overflow-y: auto;
@@ -407,7 +407,7 @@ MAP PAGE ONLY
   max-width: 100%;
   height: calc(100vh - 124px);
 }
-#coz-sidebar--info {
+#spectremaps-sidebar--info {
   overflow-y: auto;
   overflow-x: hidden;
   display: none;
@@ -418,7 +418,7 @@ MAP PAGE ONLY
   width: calc(100% - 20px);
   max-height: 100%;
  }
-#coz-sidebar--info-close {
+#spectremaps-sidebar--info-close {
   position: absolute;
   right: 20px;
   border: solid thin;
@@ -429,7 +429,7 @@ MAP PAGE ONLY
   font-size: x-large;
   background: white;
 }
-#coz-sidebar--footer {
+#spectremaps-sidebar--footer {
   position: absolute;
   bottom:0;
   left:0;
@@ -441,8 +441,8 @@ MAP PAGE ONLY
   height:2.5rem;
   border-top: solid thin #dfe0e1;
 }
-#coz-sidebar--footer button,
-#coz-sidebar--footer .btn {
+#spectremaps-sidebar--footer button,
+#spectremaps-sidebar--footer .btn {
   width: 82px;
   max-width: 23%;
   margin: 0 3px;
@@ -466,7 +466,7 @@ MAP PAGE ONLY
 /*
 mapboxgl
 */
-.coz-map {
+.spectremaps-map {
   width: 100%;
   position: absolute;
   top: 0;
@@ -501,7 +501,7 @@ mapboxgl
 }
 @media screen and (max-width: 768px) {
   /*better modal display on mobile*/
-  .coz-logo, .coz-logo-modal {
+  .spectremaps-logo, .spectremaps-logo-modal {
     display: none;
   }
   /* .modal-container .modal-header, 
@@ -525,10 +525,10 @@ mapboxgl
   }
 }
 @media screen and (min-width:769px) {
-  #coz-sidebar--header-close {
+  #spectremaps-sidebar--header-close {
     display: none;
   }
-  .coz-map--sidebar-active {
+  .spectremaps-map--sidebar-active {
     left: 360px;
     width: calc(100% - 360px)
   }
@@ -596,7 +596,7 @@ mapboxgl
 /*
 gartrell group customized layer tree
 */
-.coz-sidebar--content .mapboxgl-ctrl {
+.spectremaps-sidebar--content .mapboxgl-ctrl {
   box-shadow:none;
   background-color: inherit;
   /* position: fixed;
@@ -605,15 +605,15 @@ gartrell group customized layer tree
   width: 100%;
   height: auto;
 }
-#coz-sidebar--layerControl {
+#spectremaps-sidebar--layerControl {
   background: white;
 }
 @media screen and (max-height: 800px) {
-  #coz-sidebar--layerControl {
+  #spectremaps-sidebar--layerControl {
     width: 90%;
     border-right: solid thin #dfe0e1;
   }
-  #coz-sidebar--content {
+  #spectremaps-sidebar--content {
     background: #f8f9fa;
   }
 }

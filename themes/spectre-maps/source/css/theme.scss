@@ -12,22 +12,22 @@ body {
 }
 main {
   flex: 1;
-  margin: 2rem auto;
-  max-width: 40rem;
 }
-.post > p > img {
+.mapui__container {
+  max-width: 1200px;
+}
+.mapui__post > p > img {
   margin: 1rem -2rem;
   max-width: 120%;
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
-.logo {
+.mapui__logo {
   width: 1rem;
   padding-top: 0.4rem;
 }
-
-.navbar {
+.mapui__navbar {
   background-color: #f8f9fa;
   padding: 0 0.6rem;
   color: #0d84b3;
@@ -41,13 +41,13 @@ h1, h2, h3, h4, h5, h6 {
 // }
 
 @media screen and (max-width:768px) {
-  .navbar .navbar-section:not(:first-child):last-child {
+  .mapui__navbar .navbar-section:not(:first-child):last-child {
     position: absolute;
     left: 12px;
     top: 30px;
     font-size: 0.6rem;
   }
-  .navbar .navbar-section {
+  .mapui__navbar .navbar-section {
     margin-bottom: 25px;
   }
 }
@@ -63,11 +63,7 @@ h1, h2, h3, h4, h5, h6 {
       width: 50%;
   }
 }
-.container {
-  padding: 0 0.6rem;
-  padding-left: 0.6rem;
-  padding-right: .6rem;
-}
+
 /* #content {
   padding-top:4rem;
 } */

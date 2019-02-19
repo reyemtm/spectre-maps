@@ -1,6 +1,7 @@
 ---
 layout: map
 title: Mapbox GL Map
+category: maps
 date: 2019-02-15 16:04:41
 ---
 <script>
